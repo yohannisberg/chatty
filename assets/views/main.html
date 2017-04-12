@@ -9,6 +9,15 @@
 		<input ng-model="newMessage" type="text" placeholder="Hello!">
 	</form>
 
-	<div ng-repeat="message in messages track by $index">{{ message }}</div>
+  <form ng-submit="addName(newName)">
+    <input ng-model="newName" type="text" placeholder="Username">
+  </form>
+
+	<div ng-repeat="message in messages name in username track by $index">{{ message.message }} : {{ message.time
+  | date:'h:mm a' }} </div>
+
+  <!-- <div ng-repeat="name in username">
+{{ name }}
+  </div> -->
 
 </div>

@@ -14,6 +14,19 @@ angular.module('chattyApp')
       }
     };
 
+    messageService.getName().then(function ( response ) {
+      $scope.username = response.data.username;
+    })
+
+    $scope.addName = function (name){
+      if (name) {
+        messageService.addName(name).then(function (
+          response ) {
+            $scope.messages = response.data.username;
+          });
+      }
+    };
+
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
